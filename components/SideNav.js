@@ -11,13 +11,13 @@ export default function SideNav() {
         topics=
           {
             [
-              "Next.js",
-              "Ruby on Rails",
-              "tailwindcss",
-              "HTML/CSS/JS",
-              "Stack Overflow",
-              "YouTube",
-              "Google",
+              "Frontend Development",
+              '"Just Enough" Backend',
+              "Quality Assurance",
+              "Sm/Md Biz IT Consultancy",
+              "Project Management",
+              "Yoga",
+              "Choreo K-Pop Dancing",
               "Tarot Readings"
             ]
           }

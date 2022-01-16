@@ -18,9 +18,10 @@ function Drawer(props) {
             overflow-hidden
             font-mono
             mb-2
-            min-w-[250px]
-            md:max-w-[300px]
-            ${toggle? heightOverride : 'h-[70px]' }
+            min-w-[300px]
+            md:w-max
+            ${toggle? heightOverride : 'h-[67px]' }
+            bg-white
             border-4
             hover:text-science-blue
             hover:border-science-blue
@@ -28,7 +29,7 @@ function Drawer(props) {
           `
         }
       >
-        <h2 className="font-mono text-lg font-bold p-4 mb-3 cursor-pointer" onClick={ toggleDrawer }>
+        <h2 className="font-mono text-lg font-bold p-4 cursor-pointer" onClick={ toggleDrawer }>
           { name } <span className="float-right">{ toggle? '🔼' : '🔽' }</span>
         </h2>
         <div className="px-4">

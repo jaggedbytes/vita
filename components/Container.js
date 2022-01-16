@@ -12,9 +12,10 @@ function Container(props) {
             font-mono
             p-4
             mb-2
-            min-w-[250px]
-            md:max-w-[300px]
+            min-w-[300px]
+            md:w-max
             ${ heightOverride }
+            bg-white
             border-4
             hover:text-science-blue
             hover:border-science-blue

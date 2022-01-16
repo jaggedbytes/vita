@@ -1,6 +1,6 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import Link from 'next/link'
+import Logo from './assets/Logo'
 
 function Intro() {
   return (
@@ -16,16 +16,11 @@ function Intro() {
           href="/favicon.png"
         />
       </Head>
-      <div className="basis-full">
-        <Image 
-          src="/jagged-bytes-logo.svg"
-          alt="Logo"
-          width={ 150 }
-          height={ 100 }
-        />
-      </div>
-      <div className="flex-initial mt-4 w-1/2 min-w-[300px] max-w-[500px]">
-        <h1 className="font-mono text-2xl font-bold mb-4">
+
+      <Logo />
+      
+      <div className="flex-initial mt-4 mx-5 w-1/2 min-w-[300px] max-w-[500px]">
+        <h1 className="font-mono text-2xl font-bold mb-8">
           Welcome to the digital brain bits of Jacky Giang, a.k.a. <span
             className="
               inline-block
