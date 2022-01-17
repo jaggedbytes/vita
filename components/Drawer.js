@@ -3,12 +3,22 @@ import DrawerList from './DrawerList'
 import DrawerListWLinks from './DrawerListWLinks'
 import DrawerGrid from './DrawerGrid'
 
+import * as ga from '../lib/ga'
+
 function Drawer(props) {
   const { name, heightOverride, message, topics, isGrid, hasLinks } = props
   const [ toggle, setToggle ] = useState(false)
 
-  function toggleDrawer() {
+  function toggleDrawer(event) {
     setToggle(!toggle)
+
+    ga.event({
+      action: "view_item_list",
+      params: {
+        "event_label": `${ event.target.innerText }`,
+        "value": 1
+      }
+    })
   }
 
   return (
@@ -29,7 +39,7 @@ function Drawer(props) {
           `
         }
       >
-        <h2 className="font-mono text-lg font-bold p-4 cursor-pointer" onClick={ toggleDrawer }>
+        <h2 className="font-mono text-lg font-bold p-4 cursor-pointer" onClick={ (e) => toggleDrawer(e) }>
           { name } <span className="float-right">{ toggle? '🔼' : '🔽' }</span>
         </h2>
         <div className="px-4">
