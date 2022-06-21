@@ -70,15 +70,16 @@ export default function SideNav() {
 
       <Container
         name="Links"
-        heightOverride="h-[235px]"
+        heightOverride="h-[265px]"
         message=""
         topics=
         {
           {
             "Résumé": "https://jaggedbytes.s3.amazonaws.com/documents/resume-jacky-giang-2022.pdf",
-            "Email": "mailto:jaggedbytes@protonmail.com",
+            "Blog": "https://dev.to/jaggedbytes",
             "LinkedIn": "https://www.linkedin.com/in/jacky-giang-93400b20/",
             "Github": "https://github.com/jaggedbytes",
+            "Email": "mailto:jaggedbytes@protonmail.com",
             "🤠🐮🚀": "https://y.at/🤠🐮🚀"
           }
         }
