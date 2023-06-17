@@ -1,5 +1,19 @@
+import {PortableText, PortableTextComponents} from '@portabletext/react'
+
 import React from 'react'
 import Link from 'next/link'
+
+const components: PortableTextComponents = {
+  block: {
+    normal: ({children}) => <p className="font-mono text-black md:max-w-[250px]">{children}</p>,
+  },
+  marks: {
+    link: ({value, children}) => 
+      <a href={value?.href} target="_blank" rel="noreferrer noindex nofollow" className="text-science-blue">
+        {children}
+      </a>,
+  },
+}
 
 function Container(props) {
   const { name, heightOverride, message, topics, isGrid, hasLinks } = props
@@ -24,12 +38,11 @@ function Container(props) {
         }
     >
       <h2 className="font-mono text-lg font-bold mb-3">{ name }</h2>
-      <p className="font-mono text-black mb-5 md:max-w-[250px]">{ message }</p>
       <ul className="text-gray-500">
-        { Object.entries(topics).map((topic) => {
+        { topics.map((listItem, index) => {
           return (
             <li
-              key={ topic[0] }
+              key={listItem.name + "-containerListItem-" + index}
               className="
                 underline
                 last:mt-2
@@ -40,9 +53,10 @@ function Container(props) {
                 last:hover:scale-105
               "
             >
-              <Link href={ topic[1] }>
-                <a className="text-science-blue" target="_blank">{ topic[0] }</a>
-              </Link>
+              <PortableText
+                value={listItem.description[0]}
+                components={components}
+              />
             </li>
           )})
         }

@@ -1,9 +1,17 @@
+import {PortableText, PortableTextComponents} from '@portabletext/react'
+
 import React, { useState } from 'react'
 import DrawerList from './DrawerList'
 import DrawerListWLinks from './DrawerListWLinks'
 import DrawerGrid from './DrawerGrid'
 
 import * as ga from '../lib/ga'
+
+const components: PortableTextComponents = {
+  block: {
+    normal: ({children}) => <p className="font-mono text-black mb-5 max-w-[250px]">{children}</p>,
+  },
+}
 
 function Drawer(props) {
   const { name, heightOverride, message, topics, isGrid, hasLinks } = props
@@ -43,7 +51,10 @@ function Drawer(props) {
           { name } <span className="float-right">{ toggle? '🔼' : '🔽' }</span>
         </h2>
         <div className="px-4">
-          <p className="font-mono text-black mb-5 max-w-[250px]">{ message }</p>
+          <PortableText
+            value={message}
+            components={components}
+          />
           { hasLinks? (isGrid? <DrawerGrid listItems={ topics } /> : <DrawerListWLinks listItems={ topics } />) : <DrawerList listItems={ topics } /> }
         </div>
     </div>

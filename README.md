@@ -1,8 +1,8 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) and [Sanity.io](https://www.sanity.io/).
 
 ## Getting Started
 
-First, run the development server:
+First, run the development server for the NextJS app:
 
 ```bash
 npm run dev
@@ -17,6 +17,13 @@ You can start editing the page by modifying `pages/index.js`. The page auto-upda
 [API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
 
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+
+Secondly, run the development server for Sanity Studio:
+```
+sanity dev
+```
+
+Open [http://localhost:3333](http://localhost:3333) with your browser to see the result. Read more about configuring Sanity [here](https://www.sanity.io/docs/sanity-studio).
 
 ## Learn More
 
