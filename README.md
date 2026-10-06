@@ -1,41 +1,52 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) and [Sanity.io](https://www.sanity.io/).
+This is a [Next.js](https://nextjs.org/) project with [Sanity.io](https://www.sanity.io/) for content.
 
-## Getting Started
+## Prerequisites
 
-First, run the development server for the NextJS app:
+- Node.js 24.x
+- [pnpm](https://pnpm.io/) 10.x (`corepack enable` recommended)
+
+## Setup
 
 ```bash
-npm run dev
-# or
-yarn dev
+pnpm install
+cp .env.example .env
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Fill in `.env` with your Sanity project values (and optional Google Analytics id). See `.env.example` for the required keys.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Development
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Start the Next.js app:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-Secondly, run the development server for Sanity Studio:
-```
-sanity dev
+```bash
+pnpm dev
 ```
 
-Open [http://localhost:3333](http://localhost:3333) with your browser to see the result. Read more about configuring Sanity [here](https://www.sanity.io/docs/sanity-studio).
+Open [http://localhost:3000](http://localhost:3000). Edit `pages/index.tsx` and related components; the page hot-reloads as you save.
+
+Start Sanity Studio in another terminal:
+
+```bash
+pnpm studio
+```
+
+Open [http://localhost:3333](http://localhost:3333). Schema lives under `sanity/`.
+
+## Scripts
+
+| Command | Description |
+| --- | --- |
+| `pnpm dev` | Next.js development server |
+| `pnpm build` | Production build |
+| `pnpm start` | Serve the production build |
+| `pnpm lint` | ESLint via `next lint` |
+| `pnpm studio` | Sanity Studio development server |
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Sanity Documentation](https://www.sanity.io/docs)
 
 ## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+The easiest way to deploy is the [Vercel Platform](https://vercel.com/new). Set the same environment variables from `.env.example` in the Vercel project settings.

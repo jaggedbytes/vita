@@ -1,4 +1,3 @@
-import {createClient} from "next-sanity"
 import type {InferGetStaticPropsType, GetStaticProps} from 'next'
 
 import Header from '../components/Header'
@@ -7,6 +6,7 @@ import Experience from '../components/Experience'
 import Boomerang from '../components/assets/Boomerang'
 import Footer from '../components/Footer'
 import {Fragment} from "react"
+import {client} from '../sanity/lib/client'
 
 type HeaderContent = {};
 type ExperiencesContent = {};
@@ -18,7 +18,7 @@ export default function Home({
   experiences,
   sideNavContent,
   footer,
-}: InferGetStaticPropsType<typeof getStaticProps>) {;
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <Fragment>
       <div className="flex flex-col mb-5">
@@ -36,13 +36,6 @@ export default function Home({
     </Fragment>
   );
 }
-
-const client = createClient({
-  projectId: "8vw5vu3u",
-  dataset: "production",
-  apiVersion: "2023-05-21",
-  useCdn: false
-});
 
 export const getStaticProps: GetStaticProps<{
   header: HeaderContent;

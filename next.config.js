@@ -1,5 +1,10 @@
+const path = require('path')
+
+/** @type {import('next').NextConfig} */
 module.exports = {
   reactStrictMode: true,
+  // Parent ~/package-lock.json confuses workspace-root detection
+  outputFileTracingRoot: path.join(__dirname),
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/i,
