@@ -13,29 +13,13 @@ export default function SideNav({props}) {
         hasLinks={false}
       />
 
-      <Drawer
-        name={props.defiPassport[0].name}
-        heightOverride="h-[315px]"
-        message={props.defiPassport[0].description}
-        topics={props.defiPassport[0].relatedContent}
-        isGrid={true}
-        hasLinks={true}
-      />
-
-      <Drawer
-        name={props.nftAndGames[0].name}
-        heightOverride="h-[345px]"
-        message={props.nftAndGames[0].description}
-        topics={props.nftAndGames[0].relatedContent}
-        isGrid={false}
-        hasLinks={true}
-      />
-
       <Container
         name={props.externalLinks[0].name}
         heightOverride="h-[265px]"
         message={props.externalLinks[0].description}
-        topics={props.externalLinks[0].relatedContent}
+        topics={props.externalLinks[0].relatedContent.filter(
+          (item) => item.name !== '🤠🐮🚀'
+        )}
         isGrid={false}
         hasLinks={true}
       />

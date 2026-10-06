@@ -43,15 +43,7 @@ function Container(props) {
           return (
             <li
               key={listItem.name + "-containerListItem-" + index}
-              className="
-                underline
-                last:mt-2
-                last:text-2xl
-                last:no-underline
-                last:transition-all
-                last:hover:translate-x-2
-                last:hover:scale-105
-              "
+              className="underline"
             >
               <PortableText
                 value={listItem.description[0]}
